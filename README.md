@@ -20,7 +20,7 @@
 1. Клонируйте репозиторий:
 
    ```
-   git clone https://github.com/castus24/user-crud-test.git
+   git clone https://github.com/castus24/daily-grow-test-project.git
 
 2. Установите зависимости с помощью Composer:
 
