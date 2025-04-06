@@ -243,7 +243,6 @@ class MailingController extends Controller
                 'timezone' => config('app.timezone')
             ]);
 
-            // Проверяем, что время в будущем
             if ($scheduledAt->isPast()) {
                 Log::warning('Scheduled time is in the past', [
                     'mailing_id' => $mailing->id,

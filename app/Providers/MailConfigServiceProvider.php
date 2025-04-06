@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use App\Models\EmailSetting;
 use App\Services\EmailService;
@@ -22,16 +23,16 @@ class MailConfigServiceProvider extends ServiceProvider
     public function boot(): void
     {
         try {
-            // Загружаем активные настройки почты из базы данных
-            $emailSetting = EmailSetting::where('is_active', true)->first();
-            
+            $emailSetting = EmailSetting::query()
+                ->where('is_active', true)
+                ->first();
+
             if ($emailSetting) {
-                // Обновляем конфигурацию почты
+                /** @var EmailSetting $emailSetting */
                 EmailService::updateMailConfig($emailSetting);
             }
         } catch (\Exception $e) {
-            // Логируем ошибку, но не прерываем выполнение
-            \Log::error('Failed to load mail settings: ' . $e->getMessage());
+            Log::error('Failed to load mail settings: ' . $e->getMessage());
         }
     }
-} 
+}

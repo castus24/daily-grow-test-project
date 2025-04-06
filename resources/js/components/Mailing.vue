@@ -102,7 +102,7 @@ const saveMailing = async () => {
             }))
         }
 
-        console.log('Sending mailing data:', mailingData) // Добавляем лог для отладки
+        console.log('Sending mailing data:', mailingData)
 
         await axios.post('/api/mailing', mailingData)
         toast.success('Рассылка успешно создана')

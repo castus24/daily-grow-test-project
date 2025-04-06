@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('mailings', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Название рассылки
-            $table->text('content'); // Текст рассылки
-            
-            // Статистика
+            $table->string('name');
+            $table->text('content');
+
             $table->integer('total_recipients')->default(0);
             $table->integer('sent_count')->default(0);
-            
-            // Статус
+
             $table->enum('status', ['draft', 'scheduled', 'sent', 'failed'])->default('draft');
+            $table->dateTime('scheduled_at')->nullable();
 
             $table->timestamps();
         });

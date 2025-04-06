@@ -109,7 +109,7 @@ const importFromExcel = async () => {
         importDialog.value = false
         excelFile.value = null
 
-        await loadClients({page: 1, itemsPerPage: itemsPerPage.value}) // Обновляем список
+        await loadClients({page: 1, itemsPerPage: itemsPerPage.value})
     } catch (error) {
         console.error("Error importing clients:", error)
         toast.error(error.response?.data.message || 'Ошибка импорта данных')
