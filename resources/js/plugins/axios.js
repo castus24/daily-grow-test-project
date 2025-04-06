@@ -1,5 +1,5 @@
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: window.location.origin,
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
