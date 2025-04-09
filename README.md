@@ -41,71 +41,31 @@
     php artisan key:generate
    ```
 
-5. Установите библиотеку spatie/laravel-query-builder
-
-   ```bash
-   composer require spatie/laravel-query-builder
-   ```
+5. Распакауйте конфиги и сервис провайдер для spatie/laravel-query-builder
 
    ```bash
    php artisan vendor:publish --provider="Spatie\QueryBuilder\QueryBuilderServiceProvider" --tag="query-builder-config"
    ```
 
-6. Установите библиотеку maatwebsite/excel
-
-   ```bash
-   composer require maatwebsite/excel
-   ```
-
-7. Установите библиотеку bensampo/laravel-enum
-
-   ```bash
-   composer require bensampo/laravel-enum
-   ```
-
-8. Создайте миграцию для таблицы очередей.
+6. Создайте миграцию для таблицы очередей.
 
    ```bash
    php artisan queue:table
    ```
 
-9. Запустите миграции для создания таблиц:
+7. Запустите миграции для создания таблиц:
 
    ```bash
    php artisan migrate
    ```
 
-10. Установите npm, vue, vuetify, vue-router и остальное.
+8. Установите npm.
 
 ```bash
 npm install
 ```
 
-```bash
-npm install vue
-```
-
-```bash
-npm install vuetify
-```
-
-```bash
-npm install vue-router
-```
-
-```bash
-npm install pinia
-```
-
-```bash
-npm install @vitejs/plugin-vue
-```
-
-```bash
-php artisan @mdi/font
-```
-
-11. Запустите cервер artisan и npm, а также воркер для очередей:
+9. Запустите cервер artisan и npm, а также воркер для очередей:
 
 ```
 php artisan serve
